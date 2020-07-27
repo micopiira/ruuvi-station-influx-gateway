@@ -49,7 +49,7 @@ app.post('/api/station', async function (req, res) {
     for (const key in tag) {
       const value = tag[key]
 
-      let point = new Point(key).tag('id', id)
+      let point = new Point(key).tag('id', id).tag('name', tag.name)
       switch (typeof (value)) {
         case 'number':
           point = point.floatField('value', value)
